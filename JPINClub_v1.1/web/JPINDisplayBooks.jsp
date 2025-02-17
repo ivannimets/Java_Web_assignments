@@ -11,7 +11,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JPIN Books</title>
+        <title>JPIN Club - Books</title>
         <link rel="stylesheet" href="Styles/books.css">
     </head>
     <%@ include file="JPINBanner.jsp" %>
