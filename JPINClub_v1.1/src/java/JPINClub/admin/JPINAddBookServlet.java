@@ -38,18 +38,13 @@ public class JPINAddBookServlet extends HttpServlet {
         if (description == null || description.trim().length() < 3) {
             errors.add("Description must have at least 3 characters.");
         }
-        int quantity = 0;
         String quantityIn = request.getParameter("quantity");
-        if (quantityIn.trim().isEmpty() || quantityIn != null) {
+        if (quantityIn.trim().isEmpty() || quantityIn == null) {
             quantityIn = "0";
         }
-        try {
-            quantity = Integer.parseInt(quantityIn);
-            if (quantity <= 0) {
-                errors.add("Quantity must be a positive number.");
-            }
-        } catch (Exception e) {
-            errors.add("Quantity must be a valid number.");
+        int quantity = Integer.parseInt(quantityIn);
+        if (quantity <= 0) {
+            errors.add("Quantity must be a positive number.");
         }
 
         if (!errors.isEmpty()) {
